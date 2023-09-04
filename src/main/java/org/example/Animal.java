@@ -1,5 +1,4 @@
 package org.example;
-
 import java.util.List;
 
 public record Animal(
@@ -15,5 +14,12 @@ public record Animal(
             if (animal.species().name().equals("Löwe"))
                 x++;
         return x;
+    }
+
+    public Animal withAge(int bDay){
+        return new Animal(ID, name, species, bDay, sponsor);
+    }
+    public Animal withOwner(Owner newSponsor){
+        return new Animal(ID, name, species, age, newSponsor);
     }
 }
