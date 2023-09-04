@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Zoo!");
@@ -20,6 +23,17 @@ public class Main {
 
         System.out.println("Ist Finn ein Affe? "+monkey.species().name().equals("Affe"));
         System.out.println(fert.toString());
+
+        List<Animal> animals = new ArrayList<>();
+        animals.add(monkey);
+        animals.add(lion1);
+        animals.add(lion2);
+        animals.add(wolf2);
+        animals.add(fert);
+
+        Species countLions = lion;
+        int lionsFound = Animal.countSpecies(animals, countLions);
+        System.out.println("How many lions are there? "+lionsFound);
 
     }
 }
